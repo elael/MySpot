@@ -1,0 +1,2 @@
+# MySpot
+Find your spot!
