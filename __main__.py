@@ -1,7 +1,8 @@
 import logging
+from threading import Thread
 
 from flask import Flask
-from threading import Thread
+
 from blueprints import kitchen_blueprint
 
 logger = logging.getLogger(__name__)
@@ -14,7 +15,7 @@ def thread_web_app(http_port):
 
     root_path = '/v1'
 
-    app.register_blueprint(kitchen_blueprint(), url_prefix=root_path + '/ros')
+    app.register_blueprint(kitchen_blueprint, url_prefix=root_path + '/myspot')
 
     app.run(host='0.0.0.0', port=http_port, debug=True, use_reloader=False)
 
@@ -24,3 +25,6 @@ def start_webapp_thread(http_port):
     web_app = Thread(name='Web App', target=thread_web_app, args=(http_port,), daemon=True)
     web_app.start()
     return web_app
+
+
+thread_web_app(http_port=8000)
