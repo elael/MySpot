@@ -1,21 +1,10 @@
 import json
-from datetime import time, datetime, date, timedelta
-from typing import NamedTuple, Tuple, TypedDict, Dict
+from datetime import time
+from typing import NamedTuple, Tuple, Dict
 
 
 class MissingDBTimeError(ValueError):
     """Should be used when requested time is not present on the database"""
-
-
-# Time range configuration
-initial_time = datetime.combine(date.today(), time(hour=10, minute=0))
-final_time = datetime.combine(date.today(), time(hour=17, minute=0))
-dt = timedelta(minutes=30)
-steps = int((final_time - initial_time) / dt)
-hours = [(initial_time + n * dt).strftime('%H:%M') for n in range(steps)]
-
-KITCHEN_SEATS = {'Cadillac': 6, 'Pit Stop': 13, 'Delorean': 8, 'Jeep': 19}
-FRUIT_TYPES = ['banana', 'pear', 'peach', 'grape', 'orange', 'apple']
 
 
 class Kitchen(NamedTuple):

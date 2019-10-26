@@ -1,0 +1,19 @@
+general:
+  start_time: '10:00'
+  final_time: '18:00'
+  delta_minutes: 30
+
+kitchen_seats:
+  Cadillac: 6
+  Pit Stop: 13
+  Delorean: 8
+  Jeep: 19
+
+fruit_types:
+  - banana
+  - pear
+  - peach
+  - grape
+  - orange
+  - apple
+  - ginger

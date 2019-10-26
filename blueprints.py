@@ -1,7 +1,8 @@
 from flask import jsonify, request, Blueprint
 
 import people_counting
-from kitchen_database import kitchens_at, hours
+from config import cfg
+from kitchen_database import kitchens_at
 from utils import avg
 
 kitchen_blueprint = Blueprint('kitchen', __name__)
@@ -36,7 +37,7 @@ def get_param_value():
             'time': hour,
             'avg': avg([koch.empty_seats for koch in kitchens_at(hour)])
         }
-        for hour in hours
+        for hour in cfg.hours
     ])
 
 
