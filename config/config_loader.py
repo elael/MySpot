@@ -1,12 +1,12 @@
 from datetime import datetime, date, time, timedelta
-from typing import NamedTuple, Dict, Tuple
+from typing import NamedTuple, Dict, Tuple, List, Any
 
 import yaml
 
 
 class Configuration(NamedTuple):
     hours: Tuple[str]
-    kitchen_seats: Dict[str, int]
+    kitchens: List[Dict[str, Any]]
     fruit_types: Tuple[str]
 
 
@@ -20,6 +20,6 @@ def load_config():
     steps = round((final_time - initial_time) / dt)
     return Configuration(
         hours=tuple((initial_time + n * dt).strftime('%H:%M') for n in range(steps)),
-        kitchen_seats=cfg['kitchen_seats'],
+        kitchens=cfg['kitchens'],
         fruit_types=cfg['fruit_types']
     )
