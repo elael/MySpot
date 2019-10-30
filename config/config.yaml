@@ -3,11 +3,40 @@ general:
   final_time: '18:00'
   delta_minutes: 30
 
-kitchen_seats:
-  Cadillac: 6
-  Pit Stop: 13
-  Delorean: 8
-  Jeep: 19
+kitchens:
+  - name: Cadillac
+    seats: 20
+    floor: 1
+  - name: Pit Stop
+    seats: 0
+    floor: 1
+  - name: Kitchen B2
+    seats: 0
+    floor: 1
+  - name: Delorean
+    seats: 12
+    floor: 2
+  - name: Jeep
+    seats: 19
+    floor: 2
+  - name: Kit. A
+    seats: 0
+    floor: 3
+  - name: Kit. B1
+    seats: 0
+    floor: 3
+  - name: Kit. B2
+    seats: 0
+    floor: 3
+  - name: Kit. B3
+    seats: 0
+    floor: 3
+  - name: Kit. A
+    seats: 0
+    floor: 3
+  - name: Kit. HR
+    seats: 0
+    floor: 5
 
 fruit_types:
   - banana

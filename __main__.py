@@ -12,11 +12,8 @@ app = Flask(__name__)
 
 def thread_web_app(http_port):
     logger.info(f'Starting web server on port {http_port}')
-
     root_path = '/v1'
-
     app.register_blueprint(kitchen_blueprint, url_prefix=root_path + '/myspot')
-
     app.run(host='0.0.0.0', port=http_port, debug=True, use_reloader=False)
 
 
